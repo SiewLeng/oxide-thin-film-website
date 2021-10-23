@@ -10,12 +10,12 @@ app.set('view engine', 'ejs');
 app.use(express.static('pdf'));
 
 // index page
-app.get('/oxide-thin-film', function(req, res) {
+app.get('/', function(req, res) {
   res.render('pages/index', { ZnOlink: "../../pdf/ZnO-thin-film.pdf", HfOlink: './pdf/HfO-thin-film.pdf'});
 });
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname + '/googlee8996dd462e667c2.html'));
+app.get('/googlee8996dd462e667c2.html', function (req, res) {
+  res.sendFile(path.join(__dirname + '/views/pages/googlee8996dd462e667c2.html'));
 });
 
 const port = process.env.PORT || 3000;
